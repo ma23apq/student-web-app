@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Manager</title>
+</head>
+<body>
+
+<h1>Student Manager</h1>
+
+<form method="POST">
+    <input type="text" name="name" placeholder="Name" required><br><br>
+    <input type="number" name="age" placeholder="Age" required><br><br>
+    <input type="text" name="course" placeholder="Course" required><br><br>
+    <button type="submit">Add Student</button>
+</form>
+
+<h2>Students List</h2>
+
+<ul>
+    {% for student in students %}
+        <li>
+            {{ student[1] }} (Age: {{ student[2] }}, Course: {{ student[3] }})
+            <a href="/delete/{{ student[0] }}">Delete</a>
+        </li>
+    {% endfor %}
+</ul>
+
+</body>
+</html>
